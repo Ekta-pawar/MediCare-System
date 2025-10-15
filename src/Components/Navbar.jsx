@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [menuBar, setMenuBar] = useState(false);
-
+const MotionDiv=motion.div;
   return (
     <>
       <div className="z-50 fixed top-0 left-0 w-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-md">
@@ -47,14 +47,14 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Responsive Menu */}
-      <motion.div
+      < MotionDiv
         initial={{ x: "-100%" }}
         animate={{ x: menuBar ? 0 : "-100%" }}
         transition={{ type: "tween", duration: 0.3 }}
         className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-40 md:hidden"
       >
         <ResponsibleBar setMenuBar={setMenuBar} menuBar={menuBar} />
-      </motion.div>
+      </ MotionDiv>
     </>
   );
 };
