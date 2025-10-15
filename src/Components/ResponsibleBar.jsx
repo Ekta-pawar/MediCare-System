@@ -1,10 +1,10 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion} from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const ResponsibleBar = ({ setMenuBar, menuBar }) => {
   return (
-    <AnimatePresence mode="wait">
+    <>
       {menuBar && (
         <motion.div
           initial={{ opacity: 0, y: -100 }}
@@ -49,7 +49,7 @@ const ResponsibleBar = ({ setMenuBar, menuBar }) => {
           </div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </>
   );
 };
 

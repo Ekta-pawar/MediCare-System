@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="bg-gradient-to-l from-blue-100 to-blue-300/60 pt-[80px] pb-16">
       <div className="container mx-auto p-4 md:p-14">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-          {/* Hero Text */}
+       
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -26,7 +26,7 @@ const Hero = () => {
             </button>
           </motion.div>
 
-          {/* Hero Image */}
+      
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}

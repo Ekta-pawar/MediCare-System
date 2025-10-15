@@ -4,21 +4,17 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const YogaAsan = () => {
-  const MotionDiv=motion.div
   return (
     <>
       <div className="pt-[90px] container mx-auto">
-        < MotionDiv
-      
+        <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
           className="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-600"
-        > 
-         <h1>
-          Yoga Asanas
-          </h1>
-        </ MotionDiv>
+        >
+          <h1>Yoga Asanas</h1>
+        </motion.div>
       </div>
 
       <div className="container mx-auto grid grid-cols-1 gap-6 my-5 md:grid-cols-2 lg:grid-cols-3 px-4">
