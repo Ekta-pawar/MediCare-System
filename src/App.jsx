@@ -1,35 +1,25 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import Hero from "./Components/Hero.jsx"
-import Services from "./components/Services";
-import Community from "./components/Community.jsx";
-import YogaAsan from "./components/YogaAsan.jsx";
-import YogaPlace from "./components/YogaPlace";
-import BMICalculator from "./components/BMICalculator";
-import MedicineReminder from "./components/MedicineReminder";
-import MyProfile from "./components/MyProfile";
-import FeedBack from "./components/FeedBack.jsx";
-import Footer from "./Components/Footer.jsx"
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import NavBar from "./Components/NavBar";
+import Home from "./Components/Home";
+import MedicineReminder from "./Components/MedicineReminder";
+import YogaAsan from "./Components/YogaAsan";
+import MyProfile from "./Components/MyProfile";
 
-function App() {
+const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <NavBar />
+      <NavBar />
+      <div className="pt-20">
         <Routes>
-          <Route path="/" element={<Services />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/YogaAsan" element={<YogaAsan />} />
-          <Route path="/yoga/:name" element={<YogaPlace />} />
-          <Route path="/BmiCalculator" element={<BMICalculator />} />
+          <Route path="/" element={<Home />} />
           <Route path="/MedicineReminder" element={<MedicineReminder />} />
+          <Route path="/YogaAsan" element={<YogaAsan />} />
           <Route path="/myProfile" element={<MyProfile />} />
-          <Route path="/feedback" element={<FeedBack />} />
         </Routes>
-        <Footer />
-      </BrowserRouter>
+      </div>
     </>
   );
-}
+};
 
 export default App;

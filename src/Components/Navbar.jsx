@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-
-const Navbar = () => {
+// import { motion } from "framer-motion";
+import { FiMenu } from "react-icons/fi";
+// import ResponsibleBar from "./ResponsibleBar";
+import { Link } from "react-router-dom";
+const NavBar = () => {
   const [menuBar, setMenuBar] = useState(false);
   return (
     <>
@@ -41,9 +44,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <ResponsibleBar setMenuBar={setMenuBar} menuBar={menuBar} />
+      {/* <ResponsibleBar setMenuBar={setMenuBar} menuBar={menuBar} /> */}
     </>
   );
 };
 
-export default Navbar;
+export default NavBar;
