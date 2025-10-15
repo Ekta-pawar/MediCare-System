@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FiMenu } from "react-icons/fi";
-// import ResponsibleBar from "./ResponsibleBar";
+import ResponsibleBar from "./ResponsibleBar";
 import { Link } from "react-router-dom";
 const NavBar = () => {
   const [menuBar, setMenuBar] = useState(false);
@@ -14,7 +14,7 @@ const NavBar = () => {
               Medicare System
             </a>
           </div>
-          {/* nav item start */}
+        
           <div className="flex-col items-center justify-center hidden md:flex">
             <ul className="flex items-center justify-center gap-6">
               <li className="font-semibold text-gray-500 text-md hover:text-black">
@@ -44,7 +44,7 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-      {/* <ResponsibleBar setMenuBar={setMenuBar} menuBar={menuBar} /> */}
+      <ResponsibleBar setMenuBar={setMenuBar} menuBar={menuBar} />
     </>
   );
 };
