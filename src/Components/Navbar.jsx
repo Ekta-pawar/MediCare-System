@@ -3,48 +3,58 @@ import { motion } from "framer-motion";
 import { FiMenu } from "react-icons/fi";
 import ResponsibleBar from "./ResponsibleBar";
 import { Link } from "react-router-dom";
+
 const NavBar = () => {
   const [menuBar, setMenuBar] = useState(false);
+
   return (
     <>
-      <div className="z-50 border-b-[1px] shadow-md fixed top-0 left-0 min-w-[100%] bg-gradient-to-l to-gray-300 from-gray-400">
-        <div className="container flex items-center justify-between py-4 ">
+      <div className="z-50 fixed top-0 left-0 w-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-md">
+        <div className="container mx-auto flex items-center justify-between py-7 ">
+       
           <div>
-            <a className="font-semibold md:text-2xl" href="">
+            <Link
+              to="/"
+              className="font-bold text-xl md:text-2xl text-white hover:text-gray-100 transition-colors duration-300"
+            >
               Medicare System
-            </a>
+            </Link>
           </div>
-        
-          <div className="flex-col items-center justify-center hidden md:flex">
-            <ul className="flex items-center justify-center gap-6">
-              <li className="font-semibold text-gray-500 text-md hover:text-black">
-                {" "}
-                <Link to="/">Home</Link>
-              </li>
-              <li className="font-semibold text-gray-500 text-md hover:text-black">
-                {" "}
-                <Link to="/MedicineReminder">Medicine Reminder</Link>{" "}
-              </li>
-              <li className="font-semibold text-gray-500 text-md hover:text-black">
-                {" "}
-                <Link to="/YogaAsan">Yoga Place</Link>
-              </li>
-              <li className="font-semibold text-gray-500 text-md hover:text-black">
-                {" "}
-                <Link to="/myProfile">My Profile</Link>
-              </li>
+
+          <div className="hidden md:flex items-center justify-center">
+            <ul className="flex items-center gap-8">
+              {[
+                { name: "Home", link: "/" },
+                { name: "Medicine Reminder", link: "/MedicineReminder" },
+                { name: "Yoga Place", link: "/YogaAsan" },
+                { name: "My Profile", link: "/myProfile" },
+              ].map((item, index) => (
+                <li key={index} className="font-semibold text-white hover:text-gray-200 transition-colors duration-300">
+                  <Link to={item.link}>{item.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
-          {/* nav item start */}
+
+          {/* Mobile Menu Button */}
           <div
             onClick={() => setMenuBar(!menuBar)}
-            className="flex items-center justify-center p-1 rounded-md md:hidden bg-gradient-to-b to-blue-600 from-cyan-500"
+            className="md:hidden p-2 rounded-md bg-white/20 hover:bg-white/30 cursor-pointer transition-all duration-300"
           >
-            <FiMenu size={25} className="" />
+            <FiMenu size={25} className="text-white" />
           </div>
         </div>
       </div>
-      <ResponsibleBar setMenuBar={setMenuBar} menuBar={menuBar} />
+
+      {/* Mobile Responsive Menu */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: menuBar ? 0 : "-100%" }}
+        transition={{ type: "tween", duration: 0.3 }}
+        className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-40 md:hidden"
+      >
+        <ResponsibleBar setMenuBar={setMenuBar} menuBar={menuBar} />
+      </motion.div>
     </>
   );
 };
