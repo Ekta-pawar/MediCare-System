@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <>
       <div className="z-50 fixed top-0 left-0 w-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-md">
-        <div className="container mx-auto flex items-center justify-between py-7">
+        <div className="container mx-auto flex items-center justify-between py-7 px-2.5">
           <div>
             <Link
               to="/"
