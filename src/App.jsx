@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import NavBar from "./Components/NavBar";
+
 import Footer from "./Components/Footer";
 
 import Home from "./Components/Home";
@@ -11,12 +11,13 @@ import YogaPlace from "./Components/YogaPlace";
 import BMICalculator from "./Components/BMICalculator";
 import FeedBack from "./Components/FeedBack";
 import MyProfile from "./Components/MyProfile";
+import NavBar from "./Components/Navbar";
 
 
 const App = () => {
   return (
     <>
-      <NavBar />
+      <NavBar/>
       <div className="pt-20 min-h-[80vh]"> {/* padding to avoid navbar overlap */}
         <Routes>
           <Route path="/" element={<Home />} />
